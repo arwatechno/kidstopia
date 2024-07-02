@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kidstopia</title>
+    <link rel="stylesheet" href="../ktcss/games.css">
+</head>
+<body>
+    <main>
+        <div class="cont">
+        <img class="image" src="../pics/g1.jpg" >
+        <h1>The Game Name </h1>
+        </div>
+        <div class="cont">
+        <img class="image" src="../pics/g2.jpg" >
+        <h1>The Game Name </h1>
+        </div>
+        <div class="cont">
+        <img class="image" src="../pics/g3.jpg" >
+        <h1>The Game Name </h1>
+        </div>
+        <div class="cont">
+        <img class="image" src="../pics/g4.jpg" >
+        <h1>The Game Name </h1>
+        </div>
+        <div class="cont">
+        <img class="image" src="../pics/g5.jpg" >
+        <h1>The Game Name </h1>
+        </div>
+    </main>
+    <div class="container stage">
+        <div class="container">
+          <div class="tabbar tab-style1">
+            <ul class="flex-center">
+              <li class="home" data-where="home" data-page="../kthtml/welcomech.html">
+                <span class="material-icons-outlined">
+                  <img id="icon" src="https://i.pinimg.com/564x/26/7e/71/267e715a50e0584cbf6923c5fc940b82.jpg" alt="home" width="60px" height="40px">
+                </span>
+              </li>
+              <li class="products" data-where="products" data-page="../kthtml/books.html">
+                <span class="material-icons-outlined">
+                  <img id="icon" src="https://i.pinimg.com/564x/92/4c/2f/924c2ff4d923d54e5ad24ddc71056a94.jpg" alt="books" width="55px" height="50px">
+                </span>
+              </li>
+              <li class="services" data-where="services" data-page="../kthtml/act.html">
+                <span class="material-icons-outlined">
+                  <img id="icon" src="https://i.pinimg.com/564x/8c/1c/6b/8c1c6bc0b98fda6a52454acde782029d.jpg" alt="act" width="40px" height="40px">
+                </span>
+              </li>
+              <li class="about" data-where="about" data-page="../kthtml/games.html">
+                <span class="material-icons-outlined">
+                  <img id="icon" src="https://i.pinimg.com/736x/47/cb/f9/47cbf9ba51cbf04e95dbdb4e326d7ab9.jpg" alt="games" width="45px" height="45px">
+                </span>
+              </li>
+              <li class="help" data-where="help" data-page="../kthtml/videos.html">
+                <span class="material-icons-outlined">
+                  <img id="icon" src="https://i.pinimg.com/564x/a0/db/bc/a0dbbcaa1d6d5bb55510f9baed3e76e1.jpg" alt="vids" width="45px" height="45px">
+                </span>
+              </li>
+              <li class="follow"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer>kidstopia @ wonderworks team </footer>
+      <script>
+        
+        const uls = document.querySelectorAll(".tabbar ul");
+        
+        uls.forEach((ul) => {
+          const resetClass = ul.parentNode.getAttribute("class");
+          const lis = ul.querySelectorAll("li");
+        
+          lis.forEach((li) => {
+            li.addEventListener("click", (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const target = e.currentTarget;
+        
+              if (
+                target.classList.contains("active") ||
+                target.classList.contains("follow")
+              ) {
+                return;
+              }
+        
+              ul.parentNode.setAttribute(
+                "class",
+                `${resetClass} ${target.getAttribute("data-where")}-style`
+              );
+        
+              lis.forEach((item) => clearClass(item, "active"));
+              setClass(target, "active");
+        
+              // Get the page URL from the "data-page" attribute
+              const pageUrl = target.getAttribute("data-page");
+        
+              // Navigate to the specific page
+              window.location.href = pageUrl;
+            });
+          });
+        });
+        
+        function clearClass(node, className) {
+          node.classList.remove(className);
+        }
+        
+        function setClass(node, className) {
+          node.classList.add(className);
+        }
+            </script>
+    
+</body>
+</html>

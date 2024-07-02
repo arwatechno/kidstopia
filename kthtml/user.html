@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('https://i.pinimg.com/564x/55/7b/5c/557b5c18bfbdd11a7ae7988abc2124c0.jpg');
+    background-size:auto;
+    background-position: center;
+  }
+  
+  .window {
+    margin-top:100px;
+    width: 200px;
+    height: 400px;
+    padding: 30px;
+    text-align: center;
+    border: none;
+    border-radius: 16px;
+    backdrop-filter: blur(15px) brightness(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+  }
+
+  
+  form {
+    width: 100%;
+    
+  }
+  /* Button Styles */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  
+}
+
+.button-container div {
+  padding: 30px 34px;
+  margin: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: #e2aafc;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.button-container div:focus {
+  background-color: #741188;
+}
+a{
+  text-decoration: none;
+}
+ /* Footer Styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    z-index: 999; /* Ensure the footer is on top of other elements */
+  }
+  .h1{
+    margin: 25px;
+  }
+  footer:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #800080, #8B008B, #9400D3, #9932CC, #BA55D3, #DDA0DD, #EE82EE);
+    background-size: 200% 200%;
+    animation: colorGradient 10s ease infinite;
+    z-index: -1;
+  }
+  
+  @keyframes colorGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="window">
+            <span class="h1">Choose The Account</span>
+            <form>
+              
+        <div id="choises">        
+          <div class="button-container">
+            <a href="../kthtml/welcomech.html">
+           <div id="ch1">
+              <img src="../pics/ch.png" alt="Child" width="80px" height="80px">
+              <br>
+              Child
+           </div>
+        </a>
+           <a href="../kthtml/homep.html" >
+           <div id="ch2">
+              <img src="../pics/p.png" alt="Parent" width="80px" height="80px">
+              <br>
+              Parent
+            
+           </div>
+           </a>
+        
+          </div>        
+        </div>
+
+        </form>
+        </div>
+        <footer>kidstopia @ wonderworks team </footer>
+
+</body>
+</html>

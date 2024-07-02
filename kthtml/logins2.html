@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidstopia</title>
+    <link rel="stylesheet" href="../ktcss/logins2.css">
+</head>
+<body>
+    <div class="window">
+        <form>
+            <label for="age-slider">How old are you?</label>
+            <div class="age-slider-container">
+                <input type="range" id="age-slider" name="age" min="3" max="10" value="3" step="1">
+                <span id="age-value">less than 3</span>
+            </div>
+            <br>
+            <label>Name</label>
+            <br>
+            <input type="name" class="mt-2 form-control" placeholder="child name">
+            <div id="submit">
+                <a href="../kthtml/homep.html">
+                <img src="../pics/arr.png" alt="Parent" width="70px" height="70px">
+                </a>
+            </div>
+        </form>
+    </div>
+    <footer>kidstopia @ wonderworks team</footer>
+
+    <script>
+        const ageSlider = document.getElementById('age-slider');
+        const ageValue = document.getElementById('age-value');
+
+        ageSlider.addEventListener('input', () => {
+            const age = ageSlider.value;
+            ageValue.textContent = age;
+        });
+    </script>
+</body>
+</html>
